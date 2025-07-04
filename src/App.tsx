@@ -11,6 +11,7 @@ import './App.css';
 function App() {
   return (
     <RecipeProvider>
+      {/*Configuración de rutas con React Router*/}
       <BrowserRouter>
         <div className="app">
           <Navbar />
