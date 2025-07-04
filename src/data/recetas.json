@@ -3,7 +3,7 @@
     {
       "id": 1,
       "nombre": "Pasta Universitaria Rápida",
-      "imagen": "/placeholder-recipe.svg",
+      "imagen": "https://i.ytimg.com/vi/nPWrvcx3llM/maxresdefault.jpg",
       "ingredientes": ["400g pasta", "1 lata tomate triturado", "2 dientes ajo", "100g queso parmesano", "Aceite de oliva", "Sal y pimienta"],
       "pasos": [
         "Hervir agua con sal y cocinar la pasta según instrucciones",
@@ -21,7 +21,7 @@
     {
       "id": 2,
       "nombre": "Quesadillas de Pollo",
-      "imagen": "/placeholder-recipe.svg",
+      "imagen": "https://www.annarecetasfaciles.com/files/quesadilla-pollo-1-scaled.jpg",
       "ingredientes": ["2 tortillas de harina", "150g pollo cocido", "100g queso oaxaca", "1/2 cebolla", "1 pimiento", "Aceite", "Sal"],
       "pasos": [
         "Picar el pollo, cebolla y pimiento en cubos pequeños",
@@ -39,7 +39,7 @@
     {
       "id": 3,
       "nombre": "Arroz Frito Estudiantil",
-      "imagen": "/placeholder-recipe.svg",
+      "imagen": "https://i.ytimg.com/vi/Oq6jxch2hi0/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAF6Wyuhu8noBuRCfh4mREcxUcQ-Q",
       "ingredientes": ["2 tazas arroz cocido", "2 huevos", "100g jamón", "1 zanahoria", "Cebollín", "Salsa de soja", "Aceite"],
       "pasos": [
         "Batir los huevos y hacer una tortilla, cortar en tiras",
@@ -57,7 +57,7 @@
     {
       "id": 4,
       "nombre": "Sandwich Club Estudiantil",
-      "imagen": "/placeholder-recipe.svg",
+      "imagen": "https://cdn0.uncomo.com/es/posts/2/4/8/como_preparar_un_sandwich_club_40842_orig.jpg",
       "ingredientes": ["3 rebanadas pan integral", "150g pechuga pollo", "4 rebanadas tocino", "Lechuga", "Tomate", "Mayonesa", "Aguacate"],
       "pasos": [
         "Tostar las rebanadas de pan",
@@ -67,6 +67,7 @@
         "Armar el sandwich en capas: pollo, tocino, lechuga, tomate y aguacate"
       ],
       "tiempo": 18,
+      "tiempoCoccion": 20,
       "dificultad": "fácil",
       "categoria": "americana",
       "valoracion": 4.6,
@@ -75,7 +76,7 @@
     {
       "id": 5,
       "nombre": "Smoothie Bowl Energético",
-      "imagen": "/placeholder-recipe.svg",
+      "imagen": "https://img-global.cpcdn.com/recipes/f642243e0250c936/680x482cq80/desayuno-completo-smoothie-bowl-energetico-foto-principal.jpg",
       "ingredientes": ["1 plátano congelado", "1/2 taza fresas", "1/2 taza yogurt griego", "1 cda miel", "Granola", "Coco rallado", "Chía"],
       "pasos": [
         "Licuar el plátano, fresas, yogurt y miel hasta obtener consistencia cremosa",
@@ -93,7 +94,7 @@
     {
       "id": 6,
       "nombre": "Pizza Casera Express",
-      "imagen": "/placeholder-recipe.svg",
+      "imagen": "https://www.recetasdesbieta.com/wp-content/uploads/2018/09/Como-hacer-pizza-casera-rapida-con-masa-de-pizza-sin-repos-1.jpg",
       "ingredientes": ["1 base pizza", "1/2 taza salsa tomate", "200g queso mozzarella", "Pepperoni", "Champiñones", "Orégano"],
       "pasos": [
         "Precalentar horno a 220°C",
@@ -111,7 +112,7 @@
     {
       "id": 7,
       "nombre": "Tacos de Pescado",
-      "imagen": "/placeholder-recipe.svg",
+      "imagen": "https://veggiefestchicago.org/wp-content/uploads/2023/04/Fish-Tacos.jpg",
       "ingredientes": ["4 tortillas maíz", "300g filete pescado", "Repollo morado", "Aguacate", "Limón", "Crema", "Cilantro", "Sal"],
       "pasos": [
         "Sazonar el pescado con sal, pimienta y limón",
@@ -129,7 +130,7 @@
     {
       "id": 8,
       "nombre": "Ensalada César Completa",
-      "imagen": "/placeholder-recipe.svg",
+      "imagen": "https://newmansown.com/wp-content/uploads/2022/03/Caesar-salad-with-croutons.jpg",
       "ingredientes": ["1 lechuga romana", "150g pechuga pollo", "Pan tostado", "Queso parmesano", "Huevo", "Mostaza", "Limón", "Aceite oliva"],
       "pasos": [
         "Lavar y cortar la lechuga en trozos",
@@ -143,6 +144,28 @@
       "categoria": "saludable",
       "valoracion": 4.2,
       "porciones": 2
+    },
+    {
+      "id": 9,
+      "nombre": "Mousse de Chocolate con Aguacate",
+      "imagen": "https://okdiario.com/img/2018/04/23/mousse-chocolate-aguacate.jpg",
+      "ingredientes": [
+        "2 aguacates maduros","3 cucharadas de cacao en polvo sin azúcar","3 cucharadas de miel o sirope de agave","1 cucharadita de extracto de vainilla",
+        "Una pizca de sal","2 cucharadas de leche vegetal"],
+      "pasos": [
+        "Abrir los aguacates y colocar la pulpa en una licuadora o procesador de alimentos",
+        "Agregar el cacao en polvo, miel, vainilla, sal y leche vegetal",
+        "Procesar hasta obtener una mezcla cremosa y homogénea",
+        "Refrigerar al menos 1 hora antes de servir",
+        "Servir en vasitos y decorar con frutas o nibs de cacao si se desea"
+      ],
+      "tiempo": 15,
+      "dificultad": "fácil",
+      "categoria": "postre",
+      "valoracion": 4.6,
+      "porciones": 2
     }
+
+    
   ]
 }

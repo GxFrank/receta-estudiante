@@ -39,7 +39,6 @@ const CreateRecipePage: React.FC = () => {
       [name]: name === 'tiempo' || name === 'porciones' ? Number(value) : value
     }));
 
-    // Limpiar error del campo cuando el usuario empiece a escribir
     if (errors[name as keyof RecipeFormErrors]) {
       setErrors(prev => ({
         ...prev,
@@ -48,7 +47,6 @@ const CreateRecipePage: React.FC = () => {
     }
   };
 
-  // Función de validación
   const validateForm = (): boolean => {
     const newErrors: RecipeFormErrors = {};
 
@@ -91,10 +89,9 @@ const CreateRecipePage: React.FC = () => {
     setIsSubmitting(true);
 
     try {
-      // Simular delay de red
       await new Promise(resolve => setTimeout(resolve, 1000));
 
-      // Procesar los datos del formulario
+     
       const nuevaReceta = {
         nombre: formData.nombre.trim(),
         imagen: '/placeholder-recipe.svg', // Imagen por defecto

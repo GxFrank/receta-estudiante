@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, NavLink } from 'react-router-dom';
 import { useRecipes } from '../hooks/useRecipes';
 
 const Navbar: React.FC = () => {
@@ -31,6 +31,12 @@ const Navbar: React.FC = () => {
         <Link to="/crear" className={isActive('/crear')}>
           ➕ Crear Receta
         </Link>
+        <NavLink 
+          to="/estadisticas" 
+          className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
+        >
+           Estadísticas
+        </NavLink>
       </div>
     </nav>
   );

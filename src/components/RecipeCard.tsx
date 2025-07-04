@@ -8,12 +8,10 @@ interface RecipeCardProps {
 }
 
 const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
-  const { addToFavoritos, removeFromFavoritos, isFavorito } = useRecipes();
+  const { isFavorito, addToFavoritos, removeFromFavoritos } = useRecipes();
 
-  const handleFavoritoClick = (e: React.MouseEvent) => {
+  const handleFavoriteClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    e.stopPropagation();
-    
     if (isFavorito(recipe.id)) {
       removeFromFavoritos(recipe.id);
     } else {
@@ -42,9 +40,8 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
           }}
         />
         <button 
-          className={`favorite-btn ${isFavorito(recipe.id) ? 'active' : ''}`}
-          onClick={handleFavoritoClick}
-          aria-label={isFavorito(recipe.id) ? 'Quitar de favoritos' : 'Agregar a favoritos'}
+          className="favorite-btn"
+          onClick={handleFavoriteClick}
         >
           {isFavorito(recipe.id) ? '❤️' : '🤍'}
         </button>

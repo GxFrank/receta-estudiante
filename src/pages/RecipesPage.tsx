@@ -4,35 +4,45 @@ import RecipeCard from '../components/RecipeCard';
 import FilterBar from '../components/FilterBar';
 
 const RecipesPage: React.FC = () => {
-  const { recetas } = useRecipes();
+  const { 
+    recetas,            
+    difficultyFilter,
+    filterByDifficulty,
+    filteredRecipes
+  } = useRecipes();
+
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
-  const [selectedDifficulty, setSelectedDifficulty] = useState('');
 
-  // Obtener categorías únicas
+  const handleDifficultyChange = (difficulty: string) => {
+    filterByDifficulty(difficulty as 'fácil' | 'medio' | 'difícil' | '');
+  };
+
   const categories = useMemo(() => {
-    return Array.from(new Set(recetas.map(receta => receta.categoria)));
-  }, [recetas]);
+    return Array.from(new Set(filteredRecipes.map(recipe => recipe.categoria)));
+  }, [filteredRecipes]);
 
-  // Filtrar recetas basado en los criterios
-  const filteredRecetas = useMemo(() => {
-    return recetas.filter(receta => {
-      const matchesSearch = receta.nombre
+  const finalFilteredRecetas = useMemo(() => {
+    return filteredRecipes.filter(recipe => {
+      const matchesSearch = recipe.nombre
         .toLowerCase()
         .includes(searchTerm.toLowerCase()) ||
-        receta.ingredientes.some(ingrediente =>
+        recipe.ingredientes.some(ingrediente =>
           ingrediente.toLowerCase().includes(searchTerm.toLowerCase())
         );
       
       const matchesCategory = selectedCategory === '' || 
-        receta.categoria === selectedCategory;
-      
-      const matchesDifficulty = selectedDifficulty === '' || 
-        receta.dificultad === selectedDifficulty;
+        recipe.categoria === selectedCategory;
 
-      return matchesSearch && matchesCategory && matchesDifficulty;
+      return matchesSearch && matchesCategory;
     });
-  }, [recetas, searchTerm, selectedCategory, selectedDifficulty]);
+  }, [filteredRecipes, searchTerm, selectedCategory]);
+
+  const clearAllFilters = () => {
+    setSearchTerm('');
+    setSelectedCategory('');
+    filterByDifficulty('');
+  };
 
   return (
     <div className="recipes-page">
@@ -46,41 +56,37 @@ const RecipesPage: React.FC = () => {
       <FilterBar
         searchTerm={searchTerm}
         selectedCategory={selectedCategory}
-        selectedDifficulty={selectedDifficulty}
+        selectedDifficulty={difficultyFilter}
         onSearchChange={setSearchTerm}
         onCategoryChange={setSelectedCategory}
-        onDifficultyChange={setSelectedDifficulty}
+        onDifficultyChange={handleDifficultyChange}
         categories={categories}
       />
 
       <div className="results-info">
         <p className="results-count">
-          {filteredRecetas.length === recetas.length 
+          {finalFilteredRecetas.length === recetas.length 
             ? `Mostrando todas las ${recetas.length} recetas`
-            : `Mostrando ${filteredRecetas.length} de ${recetas.length} recetas`
+            : `Mostrando ${finalFilteredRecetas.length} de ${recetas.length} recetas`
           }
         </p>
       </div>
 
-      {filteredRecetas.length === 0 ? (
+      {finalFilteredRecetas.length === 0 ? (
         <div className="no-results">
           <h3>😔 No se encontraron recetas</h3>
           <p>Intenta cambiar los filtros o términos de búsqueda</p>
           <button 
-            onClick={() => {
-              setSearchTerm('');
-              setSelectedCategory('');
-              setSelectedDifficulty('');
-            }}
+            onClick={clearAllFilters}
             className="clear-filters-btn"
           >
-            Limpiar Filtros
+            Limpiar Todos los Filtros
           </button>
         </div>
       ) : (
         <div className="recipes-grid">
-          {filteredRecetas.map(receta => (
-            <RecipeCard key={receta.id} recipe={receta} />
+          {finalFilteredRecetas.map(recipe => (
+            <RecipeCard key={recipe.id} recipe={recipe} />
           ))}
         </div>
       )}
